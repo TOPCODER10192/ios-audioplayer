@@ -3,6 +3,7 @@
 //  swiftAudioPlayer
 //
 //  Created by 3Pillar Global on 9/23/15.
+//  Updated by Justin Reynard on 9/1/20.    
 //  Copyright © 2015 3PillarGlobal. All rights reserved.
 //
 
@@ -69,6 +70,12 @@ public class TPGAudioPlayer: NSObject {
         super.init()
 
         self.setupNotifications()
+    }
+
+    public func stopPlayer() {
+        self.isPlaying = false
+        self.player.seek(to: CMTime.zero)
+        self.player.pause()
     }
     
     /// Method to be called whenever play or pause functionality is needed.
